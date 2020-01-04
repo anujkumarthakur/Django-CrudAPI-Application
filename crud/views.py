@@ -24,7 +24,22 @@ def postview(request):
         return redirect('index')
     form = PostForm()
     return render(request, 'crud/post.html',{'form':form})
+#Edit a post
+def Edit(request, pk, template_name='crud/edit.html'):
+    post = get_object_or_404(Post, pk=pk)
+    form = PostForm(request.POST or None, instance=post)
+    if form.is_valid():
+        form.save()
+        return redirect('index')
+    return render(request, template_name, {'form':form})
 
+#Delete post
+def delete(request,pk,template_name='crud/confirm_delete.html'):
+    post = get_object_or_404(Post, pk=pk)
+    if request.method = 'POST':
+        post.delete()
+        return redirect('index')
+    return render(request, template_name, {'object':post})
 
 
 
