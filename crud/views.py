@@ -10,6 +10,22 @@ class IndexView(ListView):
     def get_queryset(self):
         return Post.objects.all()
 
+#Detail view (view post detail)
+class PostDetailView(DetailView):
+    model = Post
+    template_name = 'crud/post-detail.html'
+
+#New Post view(create new post)
+def postview(request):
+    if request.method == 'POST':
+        form = PostFrom(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('index')
+    form = PostForm()
+    return render(request, 'crud/post.html',{'form':form})
+
+
 
 
 
