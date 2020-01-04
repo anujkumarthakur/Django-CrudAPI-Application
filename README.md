@@ -15,6 +15,11 @@
 		
 		git clone git@github.com:anujkumarthakur/Django-CrudAPI-Application.git
 		python3 manage.py runserver
+		
+		Links are-->>
+			API			---	http://127.0.0.1:8000/api/posts/
+			Show Job Post		---	http://127.0.0.1:8000/
+			New Jobs		---	http://127.0.0.1:8000/post/
 
 
 		
