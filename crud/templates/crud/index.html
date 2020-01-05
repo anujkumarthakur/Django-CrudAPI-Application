@@ -1,12 +1,38 @@
 {% extends 'crud/base.html' %}
 {% block content %}
+
+<!-- Start left -->
+<div id="element">
+<div class="split left">
+  <div class="centered">
+    <h2>Django-CRM</h2>
+    <!-- Full Screen -->
+	      <button id="go-button">Enable Full Screen</button>
+ <!-- End Full Screen-->
+  </div>
+</div>
+<!-- End Left -->
+
+<!-- Start right -->
+<div class="split right">
+<div class="centered">
 <div class="container-fluid">
  <div class="row">
+ 
+ 
   <div class="col-md-1 col-xs-1 col-sm-1"></div>
    <div  class="col-md-10 col-xs-10 col-sm-10">
-    <h3 class="round3" style="text-align:center;">Posts</h3>
+    <h3 class="round3" style="text-align:center;">Customer Relationship Management</h3>
   </div>
   <div class="col-md-1 col-xs-1 col-sm-1"></div>
+  
+  <!-- Search Engin -->
+  <form class="form-inline my-2 my-lg-0" style="margin-left:110px;">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+  <!-- End Search Engin -->
+ 
  </div>
  <div class="row">
   <div class="col-md-10 col-xs-10 col-sm-10"></div>
@@ -56,5 +82,9 @@
    <div class="col-md-1 col-xs-1 col-sm-1"></div>
   </div>
  {% endfor %}
+ 
+</div>
+</div>
+</div>
 </div>
 {% endblock %}
