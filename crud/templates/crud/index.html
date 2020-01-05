@@ -5,9 +5,19 @@
 <div id="element">
 <div class="split left">
   <div class="centered">
-    <h2>Django-CRM</h2>
+    <h2 style="margin-left:50px;">X-CRM</h2>
     <!-- Full Screen -->
-	      <button id="go-button">Enable Full Screen</button>
+	      <button id="go-button" style="width:200px;background:red;" class="btnx">Enable Full Screen</button>
+        <button style="margin-top:5px;width:200px;" class="btnx"><i class="fa fa-home"></i> Dashboard</button><br>
+        <button style="margin-top:5px;width:200px;" class="btnx"><i class="fa fa-bars"></i> Customers</button><br>
+        <button style="margin-top:5px;width:200px;" class="btnx"><i class="fa fa-trash"></i> Transaction</button><br>
+        <button style="margin-top:5px;width:200px;" class="btnx"><i class="fa fa-close"></i> Sales</button><br>
+        <button style="margin-top:5px;width:200px;" class="btnx"><i class="fa fa-folder"></i> Task</button>
+        <button style="margin-top:5px;width:200px;" class="btnx"><i class="fa fa-home"></i> Accounting</button><br>
+        <button style="margin-top:5px;width:200px;" class="btnx"><i class="fa fa-bars"></i> Report</button><br>
+        <button style="margin-top:5px;width:200px;" class="btnx"><i class="fa fa-trash"></i> Recruitment</button><br>
+        <button style="margin-top:5px;width:200px;" class="btnx"><i class="fa fa-close"></i> Stock</button><br>
+        <button style="margin-top:5px;width:200px;" class="btnx"><i class="fa fa-folder"></i> Payroll</button>
  <!-- End Full Screen-->
   </div>
 </div>
@@ -15,11 +25,31 @@
 
 <!-- Start right -->
 <div class="split right">
-<div class="centered">
-<div class="container-fluid">
+  <div class="centered">
+
+<!-- Chat Box strat-->
+<button class="open-button" onclick="openForm()">Chat</button>
+    <div class="chat-popup" id="myForm">
+      <form action="/action_page.php" class="form-container">
+        <h1>Chat</h1>
+        <label for="msg"><b>Message</b></label>
+        <textarea placeholder="Type message.." name="msg" required></textarea>
+        <button type="submit" class="btn">Send</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      </form>
+    </div>
+  <script>
+      function openForm() {
+        document.getElementById("myForm").style.display = "block";
+        }
+      function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+        }
+  </script>
+<!-- Chat Box End-->
+
+<div class="container-fluid">         
  <div class="row">
- 
- 
   <div class="col-md-1 col-xs-1 col-sm-1"></div>
    <div  class="col-md-10 col-xs-10 col-sm-10">
     <h3 class="round3" style="text-align:center;">Customer Relationship Management</h3>
@@ -83,8 +113,8 @@
   </div>
  {% endfor %}
  
-</div>
-</div>
-</div>
+      </div>
+    </div>
+  </div>
 </div>
 {% endblock %}
